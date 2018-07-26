@@ -164,8 +164,8 @@ class PodsField_Time extends PodsField_DateTime {
 	 * {@inheritdoc}
 	 */
 	public function is_empty( $value = null ) {
-
-		return empty( trim ( $value ) );
+		$trimmed = trim ( $value );  // put in a variable to prevent empty() error in PHP < 5.5
+		return empty( $trimmed );
 	}
 
 	/**
